@@ -1,38 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selleh Adda Gabriel | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selleh Adda Gabriel | Student Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --primary: #38bdf8;
+      --accent: #22c55e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body { background: linear-gradient(135deg, #020617, #0f172a); color: var(--text); line-height: 1.6; }
+    
+    header { background: rgba(15, 23, 42, 0.9); padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav h1 { color: var(--primary); font-size: 1.3rem; }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--primary); }
+
+    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+
+    .hero { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+
+    .card { background: var(--card); border-radius: 16px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .info-grid div span { color: var(--accent); font-weight: bold; }
+
+    .profile-img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      box-shadow: 0 0 25px rgba(56,189,248,0.6);
+      animation: floatGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translateY(0); box-shadow: 0 0 25px rgba(56,189,248,0.5); }
+      50% { transform: translateY(-12px); box-shadow: 0 0 45px rgba(56,189,248,0.9); }
+      100% { transform: translateY(0); box-shadow: 0 0 25px rgba(56,189,248,0.5); }
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #020617;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .btn:hover { transform: scale(1.05); }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } nav ul { gap: 1rem; } }
+  </style>
 </head>
 <body>
 
-<header class="navbar">
-  <h2 class="logo">Gabriel</h2>
+<header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
+    <h1>Welcome to Selleh Adda Gabriel Profile</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#code">Code</a></li>
+    </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <img src="images/profile.jpg" alt="Profile Photo">
-  <h1>Selleh Adda Gabriel</h1>
-  <p class="subtitle">Computer Science Student • 200L</p>
+<section id="home">
+  <h2 style="color:var(--primary); font-size:2.3rem; margin-bottom:1.5rem;">it's never a crime to learn new things</h2>
+  <div class="hero">
+    <!-- Profile Image LEFT -->
+    <div class="card" style="text-align:center; max-width:260px;">
+      <img src="profile.jpg" alt="Selleh Adda Gabriel" class="profile-img" />
+      <p style="color:var(--muted); margin-top:0.5rem;">The calabait</p>
+    </div>
+    <!-- Text RIGHT -->
+    <div>
+      <p style="color:var(--muted); margin-bottom:1rem;">MY DETAILS</p>
+      <ul class="reveal" style="list-style:none; color:var(--text); line-height:1.9;">
+        <li>• <strong>Name:</strong>Selleh Adda Gabriel</li>
+        <li>• <strong>school:</strong>Taraba state university,Jalingo</li>
+        <li>• <strong>Faculty:</strong> Computing & Artificial Intelligence</li>
+        <li>• <strong>Course:</strong> Computer Science</li>
+        <li>• <strong>Matric No:</strong> TSU/FSC/CS/24/1245</li>
+        <li>• <strong>Level:</strong> 200L</li>
+      </ul>
+      <a href="cv.pdf" class="btn" download>Download CV</a>
+    </div>
+  </div>
+</section>
 
-  <div class="info-card">
-    <p><strong>School:</strong> Taraba State University, Jalingo</p>
-    <p><strong>Course:</strong> Computer Science</p>
-    <p><strong>Matric No:</strong> TSU/FSC/CS/24/1245</p>
+<section id="about">
+  <div class="card reveal">
+    <h3>About Me</h3>
+    <p>I am a student learning programming, AI automation, and coding using HTML and CSS. I enjoy building responsive and modern websites while improving my problem-solving skills.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card reveal">
+    <h3>Projects</h3>
+    <ul style="margin-top:1rem; color:var(--muted);">
+      <li>✔ Personal Student Portfolio Website (HTML & CSS)</li>
+      <li>✔ Simple Responsive Web Pages</li>
+      <li>✔ Beginner AI Automation Concepts</li>
+    </ul>
+  </div>
+</section>
+
+<section id="code">
+  <div class="card reveal">
+    <h3>Sample HTML & CSS Code</h3>
+    <pre>&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;This is my first portfolio website.&lt;/p&gt;
+
+h1 {
+  color: #38bdf8;
+}
+</pre>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Selleh Adda Gabriel</p>
+  <p>© 2026 Selleh Adda Gabriel | Student Portfolio</p>
 </footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
